@@ -5,7 +5,7 @@ let container = document.querySelector('.container');
 let time = 0;
 let breakTime = false;
 let breakDuration = 1000 * 60 * 10;
-let workDuration = 1000 * 60 * 0.2;
+let workDuration = 1000 * 60 * 20;
 
 let breakColor = '#7900FF';
 let workColor = '#548CFF';
@@ -75,11 +75,15 @@ const notify = (text) => {
         alert('Browser does not support desktop notification');
     } else if(Notification.permission === 'granted') {
         var notification = new Notification(text);
+        const audioObj = new Audio('Notification_Loop.wav');
+        audioObj.play();
     } else if(Notification.permission !== 'denied') {
         Notification.requestPermission().then(function (permission) {
             // If the user accepts, let's create a notification
             if (permission === "granted") {
                 var notification = new Notification(text);
+                const audioObj = new Audio('./sounds/Notification_Loop.wav');
+                audioObj.play();
             }
         });
     }

@@ -1,0 +1,9 @@
+{
+  "name": "Ten Twenty",
+  "short_name": "Ten20",
+  "theme_color": "#548cff",
+  "background_color": "#7900ff",
+  "display": "browser",
+  "scope": "/",
+  "start_url": "index.html"
+}
